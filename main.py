@@ -35,7 +35,7 @@ def seed_db():
 
 
 
-@app.get("/", methods=["GET", "HEAD"])
+@app.api_route("/", methods=["GET", "HEAD"])
 def home(request: Request, db: Session = Depends(get_db)):
     chars = db.query(models.Character).all()
     return templates.TemplateResponse("index.html", {"request": request, "characters": chars})
