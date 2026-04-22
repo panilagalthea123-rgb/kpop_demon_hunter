@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>K-Pop Demon Hunter API</title>
+    <style>
+        body { background: #0f0c29; color: white; font-family: 'Segoe UI', sans-serif; text-align: center; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        .card { 
+            background: rgba(255, 255, 255, 0.1); 
+            border: 2px solid #ff00ff; 
+            border-radius: 15px; 
+            margin: 10px; padding: 20px; width: 250px;
+            box-shadow: 0 0 15px #ff00ff;
+        }
+        h1 { color: #00f2fe; text-shadow: 2px 2px #ff00ff; }
+        .role { color: #ff00ff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🎤 K-POP DEMON HUNTER FANBASE 🗡️</h1>
+    <div class="container">
+        {% for char in characters %}
+        <div class="card">
+            <h2>{{ char.name }}</h2>
+            <p class="role">{{ char.role }}</p>
+            <p>🎙️ {{ char.voice_actor }}</p>
+            <p>🎶 {{ char.singing_voice }}</p>
+            <small>{{ char.description }}</small>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
