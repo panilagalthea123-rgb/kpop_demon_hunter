@@ -33,8 +33,6 @@ def seed_db():
     db.close()
 
 
-
-
 @app.api_route("/", methods=["GET", "HEAD"])
 def home(request: Request, db: Session = Depends(get_db)):
     chars = db.query(models.Character).all()
